@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PragnaAI Research – AI-powered Cancer Photoacoustic Diagnosis</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Welcome Screen with Get Started Button -->
+    <div class="welcome-screen" id="welcome-screen">
+        <div class="welcome-logo">
+            <div class="welcome-logo-text">PragnaAI Research</div>
+        </div>
+        <button class="get-started-btn" id="get-started-btn">GET STARTED</button>
+        <div class="tagline">Intersection of Biology and Technology</div>
+    </div>
+
+    <!-- Main Website Content (Initially Hidden) -->
+    <div class="container" id="main-content">
+        <header>
+            <div class="logo">
+                <div class="logo-text">PragnaAI Research</div>
+            </div>
+            <div class="subtitle">AI-powered Cancer Photoacoustic Diagnosis</div>
+            <div class="author">"Intelligence that perceives diseases before it manifests."</div>
+        </header>
+
+        <!-- Lactic Acid Structure Information -->
+        <div class="lactic-acid-info">
+            <h4>Lactic Acid Molecular Structure</h4>
+            <div class="lactic-acid-structure">
+                CH₃-CH(OH)-COOH
+            </div>
+            <p>Key functional groups in lactic acid for cancer biomarker analysis</p>
+        </div>
+
+        <!-- Enhanced Progress Tracker -->
+        <div class="progress-container">
+            <div class="progress-step step-completed">
+                <div class="step-number">1</div>
+                <div class="step-text">Patient Information</div>
+            </div>
+            <div class="progress-step" id="step2">
+                <div class="step-number">2</div>
+                <div class="step-text">Lactic Acid Molecular Vibrations</div>
+            </div>
+            <div class="progress-step" id="step3">
+                <div class="step-number">3</div>
+                <div class="step-text">Diagnosis Results</div>
+            </div>
+            <div class="progress-step" id="step4">
+                <div class="step-number">4</div>
+                <div class="step-text">Follow-up Actions</div>
+            </div>
+        </div>
+
+        <!-- API status element is present but hidden with CSS -->
+        <div class="api-status" id="api-status" style="display: none;">
+            <i class="fas fa-sync fa-spin"></i> Checking backend connection...
+        </div>
+
+        <!-- Patient Information Section -->
+        <div class="section patient-info-section">
+            <h2 class="section-title">Patient Information</h2>
+            
+            <div class="input-group">
+                <label for="patient-name">Patient Name</label>
+                <input type="text" id="patient-name" placeholder="Enter patient name...">
+                <div class="feedback" id="name-feedback"></div>
+            </div>
+            
+            <div class="input-group">
+                <label for="patient-age">Patient Age</label>
+                <input type="number" id="patient-age" min="1" max="120" placeholder="Enter patient age...">
+                <div class="feedback" id="age-feedback"></div>
+            </div>
+            
+            <!-- Gender Selection -->
+            <div class="gender-selection">
+                <label class="gender-label">Gender</label>
+                <div class="gender-options">
+                    <div class="gender-option">
+                        <input type="radio" id="gender-male" name="gender" value="male">
+                        <label for="gender-male">Male</label>
+                    </div>
+                    <div class="gender-option">
+                        <input type="radio" id="gender-female" name="gender" value="female">
+                        <label for="gender-female">Female</label>
+                    </div>
+                </div>
+                <div class="feedback" id="gender-feedback"></div>
+            </div>
+        </div>
+
+        <!-- Lactic Acid Molecular Vibrations Section -->
+        <div class="section infrared-readings-section">
+            <!-- Patient counter -->
+            <div class="patient-counter" id="patient-counter">
+                Patient 1: Provide Lactic Acid IR frequency readings in Mega Hertz (MHz)
+            </div>
+            
+            <h2 class="section-title">Lactic Acid Molecular Vibrations</h2>
+            
+            <div class="input-group">
+                <label for="input1">ENTER THE READING OF (-C=O) CARBONYL STRETCH OBSERVED IN PHOTOACOUSTIC SPECTROSCOPY.</label>
+                <input type="number" step="0.01" id="input1" class="frequency-input" placeholder="Enter value...">
+                <div class="feedback" id="feedback1"></div>
+            </div>
+            
+            <div class="input-group">
+                <label for="input2">ENTER THE READING OF (-CH₃) METHYL GROUP DEFORMATION OBSERVED IN PHOTOACOUSTIC SPECTROSCOPY.</label>
+                <input type="number" step="0.01" id="input2" class="frequency-input" placeholder="Enter value...">
+                <div class="feedback" id="feedback2"></div>
+            </div>
+            
+            <div class="input-group">
+                <label for="input3">ENTER THE READING OF (-C-OH) CARBON-OXYGEN STRETCH OBSERVED IN PHOTOACOUSTIC SPECTROSCOPY.</label>
+                <input type="number" step="0.01" id="input3" class="frequency-input" placeholder="Enter value...">
+                <div class="feedback" id="feedback3"></div>
+            </div>
+            
+            <div class="input-group">
+                <label for="input4">ENTER THE READING OF (-O-H) HYDROXYL STRETCH OBSERVED IN PHOTOACOUSTIC SPECTROSCOPY.</label>
+                <input type="number" step="0.01" id="input4" class="frequency-input" placeholder="Enter value...">
+                <div class="feedback" id="feedback4"></div>
+            </div>
+            
+            <button class="btn" id="analyze-btn">Run Auto Analysis</button>
+            
+            <div class="next-patient" id="next-patient">
+                <button class="btn btn-alt" id="next-btn">Next Patient</button>
+            </div>
+        </div>
+
+        <!-- Diagnosis Results Section -->
+        <div class="section">
+            <h2 class="section-title">Diagnosis Results</h2>
+            
+            <div class="result" id="result">
+                <h3>Patient Diagnosis</h3>
+                
+                <!-- Enhanced AI Reasoning Section -->
+                <div class="ai-reasoning" id="ai-reasoning" style="display: none;">
+                    <h4>AI Reasoning Process</h4>
+                    <p id="reasoning-text">The AI is analyzing lactic acid molecular vibration patterns and comparing them to established cancer biomarkers...</p>
+                    
+                    <div class="confidence-meter">
+                        <div class="confidence-label">
+                            <span>Confidence Level:</span>
+                            <span id="confidence-value">0%</span>
+                        </div>
+                        <div class="confidence-bar">
+                            <div class="confidence-fill" id="confidence-fill"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="data-source">
+                        <i class="fas fa-database"></i> Data sources: Lactic Acid IR Database, Cancer Biomarker Library, Clinical Guidelines
+                    </div>
+                </div>
+                
+                <div class="probability-meter">
+                    <div class="probability-fill" id="probability-fill"></div>
+                </div>
+                
+                <div class="probability-labels">
+                    <span>0%</span>
+                    <span>50%</span>
+                    <span>100%</span>
+                </div>
+                
+                <div class="risk-level" id="risk-level"></div>
+                <div id="probability-text">Probability: <span id="probability-value">0</span>%</div>
+                <div class="recommendation" id="recommendation"></div>
+                
+                <!-- Enhanced Decision Log -->
+                <div class="decision-log" id="decision-log">
+                    <h4>Decision Log</h4>
+                    <div class="log-entry">
+                        <div class="log-time">12:05:23</div>
+                        <div>Initialized lactic acid molecular analysis</div>
+                    </div>
+                </div>
+                
+                <!-- Multi-Agent System Display -->
+                <div class="multi-agent-system" id="multi-agent-system">
+                    <h4>Multi-Agent Collaboration System</h4>
+                    <div class="agent-grid">
+                        <div class="agent-card">
+                            <strong>Lactic Acid Analysis Agent</strong><br>
+                            Analyzing molecular patterns in lactic acid
+                        </div>
+                        <div class="agent-card">
+                            <strong>Cancer Biomarker Agent</strong><br>
+                            Calculating cancer probability scores
+                        </div>
+                        <div class="agent-card">
+                            <strong>Clinical Correlation Agent</strong><br>
+                            Recommending medical follow-up
+                        </div>
+                        <div class="agent-card">
+                            <strong>Ethical Safety Agent</strong><br>
+                            Ensuring safe recommendations
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Proactive Actions -->
+                <div class="proactive-actions" id="proactive-actions">
+                    <h4>Proactive Recommendations</h4>
+                    <div class="action-item">
+                        <i class="fas fa-robot action-icon"></i>
+                        <span id="proactive-text">Analyzing lactic acid metabolic patterns...</span>
+                    </div>
+                </div>
+                
+                <!-- Action buttons for all probability levels -->
+                <div class="action-buttons" id="action-buttons">
+                    <button class="action-btn schedule" id="schedule-btn">Schedule Follow-up Tests</button>
+                    <button class="action-btn" id="research-btn">Research Metabolic Patterns</button>
+                </div>
+                
+                <!-- Scheduling Options - Shown for all probability levels -->
+                <div class="scheduling-options" id="scheduling-options">
+                    <h3 class="scheduling-title">Schedule Follow-up Tests</h3>
+                    
+                    <div class="scheduling-urgency">
+                        <div class="urgency-option urgency-high" data-urgency="high">
+                            <div class="urgency-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                            <div class="urgency-title">High Urgency</div>
+                            <div class="urgency-desc">Within 24-48 hours</div>
+                        </div>
+                        <div class="urgency-option urgency-medium" data-urgency="medium">
+                            <div class="urgency-icon"><i class="fas fa-clock"></i></div>
+                            <div class="urgency-title">Medium Urgency</div>
+                            <div class="urgency-desc">Within 1-2 weeks</div>
+                        </div>
+                        <div class="urgency-option urgency-low" data-urgency="low">
+                            <div class="urgency-icon"><i class="fas fa-calendar-check"></i></div>
+                            <div class="urgency-title">Low Urgency</div>
+                            <div class="urgency-desc">Within 1 month</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Test Suggestions Based on Probability -->
+                    <div class="test-suggestions" id="test-suggestions">
+                        <h5>Recommended Tests Based on Your Risk Level:</h5>
+                        <ul id="suggested-tests-list">
+                            <!-- Suggested tests will be populated here -->
+                        </ul>
+                    </div>
+                    
+                    <div class="test-options">
+                        <h4>Select Diagnostic Tests</h4>
+                        <div class="test-grid">
+                            <div class="test-option" data-test="biopsy">
+                                <input type="checkbox" class="test-checkbox" id="test-biopsy">
+                                <label for="test-biopsy" class="test-name">Biopsy</label>
+                            </div>
+                            <div class="test-option" data-test="ct-scan">
+                                <input type="checkbox" class="test-checkbox" id="test-ct">
+                                <label for="test-ct" class="test-name">CT Scan</label>
+                            </div>
+                            <div class="test-option" data-test="mri">
+                                <input type="checkbox" class="test-checkbox" id="test-mri">
+                                <label for="test-mri" class="test-name">MRI</label>
+                            </div>
+                            <div class="test-option" data-test="xray">
+                                <input type="checkbox" class="test-checkbox" id="test-xray">
+                                <label for="test-xray" class="test-name">X-Ray</label>
+                            </div>
+                            <div class="test-option" data-test="ultrasound">
+                                <input type="checkbox" class="test-checkbox" id="test-ultrasound">
+                                <label for="test-ultrasound" class="test-name">Ultrasound</label>
+                            </div>
+                            <div class="test-option" data-test="blood-test">
+                                <input type="checkbox" class="test-checkbox" id="test-blood">
+                                <label for="test-blood" class="test-name">Blood Test</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="schedule-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="preferred-date">Preferred Date</label>
+                                <input type="date" id="preferred-date">
+                            </div>
+                            <div class="form-group">
+                                <label for="preferred-time">Preferred Time</label>
+                                <select id="preferred-time">
+                                    <option value="">Select time</option>
+                                    <option value="morning">Morning (8AM-12PM)</option>
+                                    <option value="afternoon">Afternoon (12PM-4PM)</option>
+                                    <option value="evening">Evening (4PM-7PM)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="additional-notes">Additional Notes (Optional)</label>
+                            <textarea id="additional-notes" rows="3" placeholder="Any specific concerns or requirements..."></textarea>
+                        </div>
+                        <button class="schedule-submit" id="schedule-submit">Confirm Schedule</button>
+                    </div>
+                </div>
+                
+                <!-- Molecular Reasons Section - Only shown for high risk -->
+                <div class="molecular-reasons" id="molecular-reasons" style="display: none;">
+                    <h4>MOLECULAR REASONS OF CANCER DETECTION</h4>
+                    <ul>
+                        <li>Abnormal lactic acid metabolism in cancer cells (Warburg effect)</li>
+                        <li>Altered carbonyl group vibrations indicating metabolic stress</li>
+                        <li>Changed hydroxyl group patterns suggesting pH alterations</li>
+                        <li>Modified methyl group deformations in cancerous tissue</li>
+                    </ul>
+                    <div class="sequence-example">
+                        Normal Lactic Acid Metabolism <span class="sequence-arrow">→</span> Cancerous Metabolic Shift
+                    </div>
+                    <p style="text-align: center; margin-top: 10px; font-style: italic;">
+                        Cancer cells show altered lactic acid production and molecular vibration patterns due to aerobic glycolysis
+                    </p>
+                </div>
+                
+                <div class="patient-info" id="patient-info">
+                    <!-- Patient information will be displayed here -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- Adaptive Learning Section -->
+        <div class="adaptive-learning" id="adaptive-learning">
+            <h4>Adaptive Learning System</h4>
+            <p>This system continuously improves its diagnostic accuracy by learning from new lactic acid biomarker data and clinical outcomes.</p>
+            <div class="confidence-meter">
+                <div class="confidence-label">
+                    <span>Synthetic demo metric:</span>
+                    <span id="model-accuracy">85%</span>
+                </div>
+                <div class="confidence-bar">
+                    <div class="confidence-fill" style="width: 94.2%"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Disclaimer Section -->
+        <div class="disclaimer">
+            <i class="fas fa-exclamation-triangle"></i> 
+            <strong>Important Notice:</strong> This page demonstrates a conceptual workflow for AI-assisted interpretation of lactic acid infrared/photoacoustic spectral features in cancer detection. Real diagnostic systems analyze complete metabolic profiles, perform rigorous validation, and are evaluated in clinical studies. This demo is for education only.
+        </div>
+    </div>
+    
+    <!-- Added footer text below the container -->
+    <div class="footer-text">
+        PragnaAI Cancer Diagnosis<br>
+        © 2025 PragnaAI Research
+    </div>
+    
+    <!-- Redirect Page -->
+    <div class="redirect-page" id="redirect-page">
+        <div class="redirect-content">
+            <h2 class="redirect-title">PROTOTYPE MODEL</h2>
+            <p class="redirect-message">This is a prototype model. The actual model will redirect you to an authorized lab test website integrated with PragnaAI.</p>
+            <button class="back-btn" id="back-btn">Back to Diagnosis</button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
