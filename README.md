@@ -39,7 +39,7 @@ Explore a **demo** that shows how PragnaAI analyzes lactic acid molecular vibrat
 
 - 💡 Vision: Revolutionize early cancer detection using AI and spectroscopy.
 - 🛠️ Tech Stack: Python, AI, Spectroscopy, Signal Processing
-- 🌐 Live Demo: [Visit Website](https://pragna-ai-bio.github.io/)
+- 🌐 Live Demo: [Visit Website](https://pragna-ai-bio.github.io/Introduction_to_PragnaAI/)
 
 ---
 
