@@ -47,7 +47,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: #f5f5f5; /* lighter grey */
+            background: #f5f5f5;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -76,17 +76,17 @@
         
         .welcome-logo-text {
             font-size: 5rem;
-            font-weight: 700; /* Back to original weight */
+            font-weight: 700;
             color: var(--secondary-color);
             text-align: center;
         }
         
         .tagline {
-            font-size: 1.2rem; /* Back to original size */
+            font-size: 1.2rem;
             color: var(--primary-color);
             margin-top: 20px;
             text-align: center;
-            font-weight: 500; /* Back to original weight */
+            font-weight: 500;
         }
         
         .get-started-btn {
@@ -96,11 +96,13 @@
             border: none;
             border-radius: 8px;
             font-size: 1.4rem;
-            font-weight: 600; /* Back to original weight */
+            font-weight: 600;
             cursor: pointer;
             transition: transform 0.3s, box-shadow 0.3s;
             margin-top: 40px;
             box-shadow: 0 4px 6px rgba(13, 74, 140, 0.2);
+            position: relative;
+            z-index: 1002;
         }
         
         .get-started-btn:hover {
@@ -122,9 +124,155 @@
             height: 100%;
             display: block;
             z-index: 1000;
+            pointer-events: none;
         }
         
-        /* Rest of the CSS remains exactly the same */
+        /* Spectroscopy Education Page */
+        .education-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--light-bg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 900;
+            padding: 20px;
+            overflow-y: auto;
+            display: none;
+        }
+        
+        .education-content {
+            max-width: 1000px;
+            width: 90%;
+            background: var(--white);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 901;
+            margin: 20px 0;
+        }
+        
+        .education-title {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .education-subtitle {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin: 25px 0 15px;
+            border-bottom: 2px solid rgba(13, 74, 140, 0.2);
+            padding-bottom: 10px;
+        }
+        
+        .education-text {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .education-list {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .education-list li {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .spectroscopy-diagram {
+            width: 100%;
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background: var(--light-bg);
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .diagram-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .molecular-structure {
+            font-family: monospace;
+            font-size: 1.3rem;
+            padding: 15px;
+            background: var(--white);
+            border-radius: 8px;
+            margin: 15px 0;
+            text-align: center;
+        }
+        
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 30px 0;
+        }
+        
+        .process-step {
+            flex: 0 0 48%;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: var(--light-bg);
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .step-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .step-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .step-description {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        .next-to-app-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, var(--primary-color), var(--primary-light));
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 6px rgba(13, 74, 140, 0.2);
+            z-index: 910;
+        }
+        
+        .next-to-app-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 14px rgba(13, 74, 140, 0.3);
+            background: linear-gradient(45deg, var(--primary-dark), #0b6a8a);
+        }
+        
+        /* Main Website Content */
         .container {
             width: 90%;
             max-width: 1200px;
@@ -134,7 +282,7 @@
             padding: 30px;
             box-shadow: var(--shadow);
             flex: 1;
-            display: none; /* Initially hidden */
+            display: none;
         }
         
         header {
@@ -1012,6 +1160,25 @@
                 font-size: 1.2rem;
             }
             
+            .education-title {
+                font-size: 2rem;
+            }
+            
+            .education-content {
+                padding: 20px;
+            }
+            
+            .process-step {
+                flex: 0 0 100%;
+            }
+            
+            .next-to-app-btn {
+                bottom: 20px;
+                right: 20px;
+                padding: 12px 25px;
+                font-size: 1.1rem;
+            }
+            
             .container {
                 width: 95%;
                 padding: 20px;
@@ -1104,7 +1271,88 @@
         </div>
     </div>
 
-    <!-- Main Website Content (Initially Hidden) -->
+    <!-- Spectroscopy Education Page -->
+    <div class="education-screen" id="education-screen">
+        <div class="education-content">
+            <h1 class="education-title">Understanding Spectroscopy for Cancer Detection</h1>
+            
+            <h2 class="education-subtitle">Lactic Acid as a Cancer Biomarker</h2>
+            <p class="education-text">
+                Cancer cells exhibit altered metabolism known as the Warburg effect, where they produce excessive lactic acid even in the presence of oxygen. This makes lactic acid molecular vibrations a valuable biomarker for cancer detection.
+            </p>
+            
+            <div class="molecular-structure">
+                CH₃-CH(OH)-COOH
+            </div>
+            <p class="education-text" style="text-align: center;">
+                Lactic Acid Molecular Structure - Key functional groups analyzed
+            </p>
+            
+            <h2 class="education-subtitle">Key Molecular Vibrations Analyzed</h2>
+            <ul class="education-list">
+                <li><strong>Carbonyl Stretch (-C=O):</strong> Around 1720 cm⁻¹ - Sensitive to metabolic changes in cancer cells</li>
+                <li><strong>Methyl Group Deformation (-CH₃):</strong> Around 1300 cm⁻¹ - Reflects structural alterations</li>
+                <li><strong>Carbon-Oxygen Stretch (-C-OH):</strong> Around 1100 cm⁻¹ - Indicates oxidative stress</li>
+                <li><strong>Hydroxyl Stretch (-O-H):</strong> Around 3500 cm⁻¹ - Shows pH changes in tissue microenvironment</li>
+            </ul>
+            
+            <h2 class="education-subtitle">Photoacoustic Spectroscopy in Cancer Detection</h2>
+            <p class="education-text">
+                Our system uses photoacoustic spectroscopy, which combines laser light and sound detection to analyze molecular vibrations in biological tissues. This advanced technique is particularly effective for detecting cancer biomarkers.
+            </p>
+            
+            <div class="spectroscopy-diagram">
+                <div class="diagram-title">Photoacoustic Spectroscopy Process</div>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-title">Laser Illumination</div>
+                        <div class="step-description">A pulsed laser illuminates the tissue sample, causing molecules to vibrate</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-title">Energy Absorption</div>
+                        <div class="step-description">Molecules absorb light energy and undergo thermal expansion</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-title">Sound Generation</div>
+                        <div class="step-description">Rapid thermal expansion generates ultrasonic waves (photoacoustic effect)</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-title">Detection & Analysis</div>
+                        <div class="step-description">Ultrasound detectors capture signals that are analyzed for molecular information</div>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 class="education-subtitle">How Our System Works</h2>
+            <p class="education-text">
+                The PragnaAI system analyzes the infrared vibration frequencies of lactic acid molecules obtained through photoacoustic spectroscopy. Our AI algorithms compare these readings against established patterns of normal and cancerous tissues to provide accurate risk assessments.
+            </p>
+            
+            <h2 class="education-subtitle">For Medical Professionals</h2>
+            <p class="education-text">
+                This non-invasive diagnostic approach complements traditional methods by providing molecular-level insights into tissue metabolism. The system is designed to assist in early detection and monitoring of cancer progression through metabolic biomarkers.
+            </p>
+            
+            <h2 class="education-subtitle">Data Interpretation</h2>
+            <p class="education-text">
+                In the following application, you will enter the specific infrared frequency readings obtained from photoacoustic spectroscopy. The system will analyze these values and provide a cancer risk probability based on lactic acid molecular vibration patterns.
+            </p>
+            
+            <p class="education-text" style="font-style: italic; text-align: center; margin-top: 30px;">
+                Continue to the application to begin analyzing patient data.
+            </p>
+        </div>
+        
+        <button class="next-to-app-btn" id="next-to-app-btn">
+            Continue to Application <i class="fas fa-arrow-right"></i>
+        </button>
+    </div>
+
+    <!-- Main Website Content -->
     <div class="container" id="main-content">
         <header>
             <div class="logo">
@@ -1462,7 +1710,7 @@
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
             const points = [];
-            const spacing = 80; // smaller spacing = more dots
+            const spacing = 80;
 
             // Generate more points
             for (let x = 0; x < canvas.width; x += spacing) {
@@ -1475,9 +1723,9 @@
             }
 
             // Draw connecting lines with lighter color
-            ctx.strokeStyle = 'rgba(0,0,0,0.1)'; // Lighter lines
+            ctx.strokeStyle = 'rgba(0,0,0,0.1)';
             ctx.lineWidth = 1;
-            const maxDist = spacing * 1.8; // increase connection range
+            const maxDist = spacing * 1.8;
             for (let i = 0; i < points.length; i++) {
                 for (let j = i + 1; j < points.length; j++) {
                     const dx = points[i].x - points[j].x;
@@ -1493,10 +1741,10 @@
             }
 
             // Draw dots with lighter color
-            ctx.fillStyle = 'rgba(0,0,0,0.25)'; // Lighter dots
+            ctx.fillStyle = 'rgba(0,0,0,0.25)';
             points.forEach(p => {
                 ctx.beginPath();
-                ctx.arc(p.x, p.y, 2, 0, Math.PI * 2); // Smaller dots
+                ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
                 ctx.fill();
             });
         }
@@ -1532,8 +1780,14 @@
                 document.getElementById('welcome-screen').style.opacity = '0';
                 setTimeout(function() {
                     document.getElementById('welcome-screen').style.display = 'none';
-                    document.getElementById('main-content').style.display = 'block';
+                    document.getElementById('education-screen').style.display = 'flex';
                 }, 500);
+            });
+            
+            // Set up Next to App button
+            document.getElementById('next-to-app-btn').addEventListener('click', function() {
+                document.getElementById('education-screen').style.display = 'none';
+                document.getElementById('main-content').style.display = 'block';
             });
             
             // Check backend connection
