@@ -35,7 +35,7 @@
             color: var(--text-dark);
             line-height: 1.6;
             min-height: 100vh;
-            padding: 20px;
+            /* Removed padding that was creating the white boundary */
             display: flex;
             flex-direction: column;
         }
@@ -295,15 +295,13 @@
             background: linear-gradient(45deg, var(--primary-dark), #0b6a8a);
         }
         
-        /* Rest of the CSS remains exactly the same */
+        /* Main container without padding that was creating the boundary */
         .container {
-            width: 90%;
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             background: var(--light-bg);
-            border-radius: 15px;
             padding: 30px;
-            box-shadow: var(--shadow);
             flex: 1;
             display: none; /* Initially hidden */
         }
@@ -1215,7 +1213,7 @@
             }
             
             .container {
-                width: 95%;
+                width: 100%;
                 padding: 20px;
             }
             
