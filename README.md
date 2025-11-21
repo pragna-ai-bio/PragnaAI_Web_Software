@@ -1,4 +1,3 @@
-<img width="1024" height="1024" alt="ChatGPT Image Nov 21, 2025, 02_02_53 PM" src="https://github.com/user-attachments/assets/b5cc685d-0a3b-4f4c-bc2c-0fe8f7c3d4bd" />
 # 🌟 PragnaAI – Transforming Early Cancer Detection
 
 ![Status](https://img.shields.io/badge/status-active-brightgreen)
