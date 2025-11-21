@@ -46,3 +46,5 @@ Explore a **demo** that shows how PragnaAI analyzes lactic acid molecular vibrat
 ## 🤝 Contributing
 
 Contributions are welcome! Please open issues or submit pull requests for improvements.
+
+<img width="1023" height="297" alt="ChatGPT Image Nov 21, 2025, 02_02_53 PM" src="https://github.com/user-attachments/assets/2b2dcdbd-cc10-4c61-bf3f-af29c6b8cb87" />
